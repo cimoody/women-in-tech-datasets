@@ -24,10 +24,9 @@ ntp = open("/datasets/tracy_data/new_to_parse.txt")
 for hexsha in loginfo_array:
 	cloned_repo1.checkout(hexsha)
 	copyfile("/women-in-tech-datasets/triketora/data.txt", "/datasets/tracy_data/data_%s.txt" % hexsha)
-	ntp.write("data_%s.txt" % hexsha)
+	ntp.append("data_%s.txt" % hexsha)
 ntp.close()
 
 f = open("/datasets/tracy_data/success_runDate.txt")
 f.write(now)
 f.close()
-
